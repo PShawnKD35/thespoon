@@ -1,7 +1,28 @@
 <h2>Welcome to PShawn's first Rails site!</h2>
+
+<p>----------------------------------------</p>
 </p>
-  <a href="/restaurants">All Restaurants</a>
+  <%= link_to "Discover all our restaurants", restaurants_path %>
 <p>
+
+<form action="/restaurants" method="get">
+  <input type="text" name="food_type" placeholder="What kind of food?">
+  <input type="submit">
+</form>
+
+<p>----------------------------------------</p>
+<p>New Restaurant</p>
+<form action="/restaurants" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="address" placeholder="Address">
+  <input type="text" name="category" placeholder="What type of food?">
+  <input type="submit">
+</form>
+
+<p>----------------------------------------</p>
+<%= link_to "Know more about us", about_path %>
+
 <p>
   <a href="#">Top</a>
 </p>

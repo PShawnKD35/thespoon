@@ -1,10 +1,8 @@
 <p>Now is <%= Time.now %><p>
 
-<% categories = [ 'japanese', 'indian', 'french' ] %>
-
 <h2>Find lots of restaurants</h2>
-<ol>
-<% categories.each do |category| %>
-  <li><%= category.capitalize %></li>
-<% end %>
-</ol>
+<ul>
+  <% @restaurants.each do |id, restaurant| %>
+    <li><%= link_to restaurant[:name], restaurant_path(id) %> (<%= restaurant[:address] %>)</li>
+  <% end %>
+</ul>
